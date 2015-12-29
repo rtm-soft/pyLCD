@@ -68,7 +68,7 @@ def main():
 		draw.text(now.strftime("%H:%M"), ('center', 0, 56), 34, 20, "/home/pi/.fonts/truetype/timesbd.ttf")
 		draw.text(now.strftime("%d.%m.%y"), ('center', 0, 56), 52, 14, "/home/pi/.fonts/truetype/timesbd.ttf")
 		
-		draw.image("/home/pi/projects/pyLCD/ef20.png", 'left', 'top')
+		#draw.image("/home/pi/projects/pyLCD/ef20.png", 'left', 'top')
 		draw.text("%i Tage" % days, ('center', 58, 127), 1, 16, "/home/pi/.fonts/truetype/timesbd.ttf")
 		draw.text("%02i:%02i" % (hours, minutes), ('center', 58, 127), 19, 25, "/home/pi/.fonts/truetype/timesbd.ttf")
 		draw.text("das sind", ('center', 58, 127), 41, 9, "/home/pi/.fonts/truetype/arial.ttf")
