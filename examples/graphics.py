@@ -37,26 +37,26 @@ def main():
 	parser.add_argument('-e', '--event', help = "The name of the event to count down to.")
 	args = parser.parse_args()"""
 	display = pylcd.ks0108.Display(backend = pylcd.GPIOBackend, pinmap = PINMAP, debug = False)
-	drawer = pylcd.ks0108.GraphicsFactory(display)
+	drawer = pylcd.ks0108.DisplayDraw(display)
 	
 	display.commit(full = True, live = False)
-	display.draw_rectangle(0, 0, 63, 63, fill = True, clear = False)
-	display.draw_rectangle(5, 5, 58, 58, fill = True, clear = True)
-	display.draw_rectangle(10, 10, 53, 53, fill = True, clear = False)
-	display.draw_rectangle(15, 15, 48, 48, fill = True, clear = True)
-	display.draw_rectangle(20, 20, 43, 43, fill = True, clear = False)
-	display.draw_rectangle(25, 25, 38, 38, fill = True, clear = True)
-	display.draw_rectangle(30, 30, 33, 33, fill = True, clear = False)
+	drawer.rectangle(0, 0, 63, 63, fill = True, clear = False)
+	drawer.rectangle(5, 5, 58, 58, fill = True, clear = True)
+	drawer.rectangle(10, 10, 53, 53, fill = True, clear = False)
+	drawer.rectangle(15, 15, 48, 48, fill = True, clear = True)
+	drawer.rectangle(20, 20, 43, 43, fill = True, clear = False)
+	drawer.rectangle(25, 25, 38, 38, fill = True, clear = True)
+	drawer.rectangle(30, 30, 33, 33, fill = True, clear = False)
 	
-	"""display.draw_circle(95, 31, 32, fill = True, clear = False)
-	display.draw_circle(95, 31, 27, fill = True, clear = True)
-	display.draw_circle(95, 31, 22, fill = True, clear = False)
-	display.draw_circle(95, 31, 17, fill = True, clear = True)
-	display.draw_circle(95, 31, 12, fill = True, clear = False)
-	display.draw_circle(95, 31, 7, fill = True, clear = True)
+	"""drawer.circle(95, 31, 32, fill = True, clear = False)
+	drawer.circle(95, 31, 27, fill = True, clear = True)
+	drawer.circle(95, 31, 22, fill = True, clear = False)
+	drawer.circle(95, 31, 17, fill = True, clear = True)
+	drawer.circle(95, 31, 12, fill = True, clear = False)
+	drawer.circle(95, 31, 7, fill = True, clear = True)
 	
-	display.draw_line(95, 0, 95, 63)
-	display.draw_line(64, 31, 127, 31)"""
+	drawer.line(95, 0, 95, 63)
+	drawer.line(64, 31, 127, 31)"""
 	
 	drawer.fill_area(96, 30, drawer.PATTERN_CROSS_STRIPES, {'distance': 3, 'x_offset': 1})
 	display.commit()
